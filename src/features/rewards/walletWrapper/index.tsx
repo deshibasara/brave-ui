@@ -42,14 +42,22 @@ type Grant = {
   expireDate: string
 }
 
+export interface AlertWallet {
+  node: React.ReactNode
+  type: AlertType
+  onAlertClose?: () => void
+}
+
+export interface ActionWallet {
+  icon: React.ReactNode,
+  name: string,
+  action: () => void
+}
+
 export interface Props {
   tokens: number
   converted: string | null
-  actions: {
-    icon: React.ReactNode,
-    name: string,
-    action: () => void
-  }[]
+  actions: ActionWallet[]
   connectedWallet?: boolean
   showCopy?: boolean
   children?: React.ReactNode
@@ -57,11 +65,7 @@ export interface Props {
   onSettingsClick?: () => void
   onActivityClick?: () => void
   grants?: Grant[]
-  alert?: {
-    node: React.ReactNode
-    type: AlertType
-    onAlertClose?: () => void
-  } | null
+  alert?: AlertWallet | null
   id?: string
 }
 
