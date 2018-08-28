@@ -31,6 +31,7 @@ export const StyledAddresses = styled<{}, 'div'>('div') `
   display: flex;
   flex-wrap: wrap;
   margin: 0 -15px;
+  align-items: stretch;
 `
 
 export const StyledAddress = styled<{}, 'div'>('div') `
@@ -52,14 +53,16 @@ export const StyledLogo = styled<{}, 'img'>('img') `
 export const StyledCard = styled(Card as ComponentType<CardProps>)`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   padding-bottom: 10px;
+  height: 100%;
 `
 
 export const StyledData = styled<{}, 'div'>('div') `
   flex-basis: 100%;
   text-align: center;
   margin-top: 30px;
+  color: #686978;
 `
 
 export const StyledAddressTitle = styled<{}, 'div'>('div') `
@@ -69,13 +72,14 @@ export const StyledAddressTitle = styled<{}, 'div'>('div') `
   line-height: 1.5;
 `
 
-export const StyledQRTitle = styled<{}, 'div'>('div') `
-  flex-basis: 100%;
-  text-align: center;
-  color: #999ea2;
-  margin: 20px 0 -10px;
-  z-index: 2;
-  position: relative;
+export const StyledShowQR = styled<{}, 'button'>('button') `
+  padding: 0;
+  background: none;
+  border: 0;
+  width: 188px;
+  height: 188px;
+  color: #686978;
+  font-weight: 500;
 `
 
 export const StyledQRImageWrapper = styled<{}, 'div'>('div') `
@@ -85,4 +89,19 @@ export const StyledQRImageWrapper = styled<{}, 'div'>('div') `
 
 export const StyledQRImage = styled<{}, 'img'>('img') `
   width: 185px;
+`
+
+export const StyledLink = styled<{}, 'a'>('a') `
+  color: #4c54d2;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
+export const StyledHeader = styled<{}, 'div'>('div') `
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 `

@@ -10,7 +10,7 @@ const locale: Record<string, string> = {
   addFunds: 'add funds',
   addFundsFAQ: 'the FAQ',
   addFundsNote: 'Reminder: The Brave Wallet is unidirectional and BAT flows to publisher sites. For more information about Brave Payments, please visit',
-  addFundsQR: 'QR Code Version',
+  addFundsQR: 'Show QR Code',
   addFundsText: 'Brave makes it easy to transfer funds from your existing crypto-currency wallet to your Brave BAT Wallet.',
   addFundsTitle: 'Add funds to your Brave wallet',
   allowTip: 'Allow tips on',

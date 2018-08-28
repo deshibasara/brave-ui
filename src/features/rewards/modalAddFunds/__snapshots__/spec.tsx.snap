@@ -31,6 +31,21 @@ exports[`ModalAddFunds tests basic tests matches the snapshot 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0 -15px;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.c9 {
+  color: #4c54d2;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c9:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c0 {
@@ -119,6 +134,7 @@ exports[`ModalAddFunds tests basic tests matches the snapshot 1`] = `
           MISSING: addFundsNote
            
           <a
+            className="c9"
             href="https://brave.com/faq-payments/#brave-payments"
           >
             MISSING: addFundsFAQ
