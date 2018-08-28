@@ -20,7 +20,8 @@ export default class Modal extends React.PureComponent<Props, {}> {
     id: 'modal'
   }
 
-  outsideClose = () => {
+  outsideClose = (e: any) => {
+    e.stopPropagation()
     if (!this.props.outsideClose) {
       return
     }

@@ -8,7 +8,7 @@ import * as React from 'react'
 import Heading from '../../../src/components/text/heading'
 import Card from '../../../src/components/layout/card'
 import Toggle from '../../../src/components/formControls/toggle'
-import ButtonPrimary from '../../../src/components/buttonsIndicators/buttonPrimary'
+import Button from '../../../src/components/buttonsIndicators/button'
 import Table, { Cell, Row } from '../../../src/components/dataTables/table'
 
 // Modals
@@ -39,14 +39,14 @@ class SyncEnabledContent extends React.PureComponent<{}, SyncEnabledContentState
     return [
       {
         content: [
-          { content: 1, theme: { textAlign: 'center' } },
+          { content: 1 },
           { content: 'MacOS without the ESC key' },
           { content: '6/12/2018, 12:10:16 PM' }
         ]
       },
       {
         content: [
-          { content: 2, theme: { textAlign: 'center' } },
+          { content: 2 },
           { content: 'Windowz machineh' },
           { content: '8/1/2018, 7:12:32 PM' }
         ]
@@ -56,7 +56,7 @@ class SyncEnabledContent extends React.PureComponent<{}, SyncEnabledContentState
 
   get header (): Cell[] {
     return [
-      { content: locale.id, theme: { width: '60px', textAlign: 'center' } },
+      { content: locale.id },
       { content: locale.deviceName },
       { content: locale.lastActive }
     ]
@@ -99,27 +99,28 @@ class SyncEnabledContent extends React.PureComponent<{}, SyncEnabledContentState
               </label>
             </div>
             <div style={theme.centeredColumnBreak}>
-              <Heading level={3} text={locale.deviceName} />
+              <Heading level={3}>{locale.deviceName}</Heading>
               <span style={theme.syncDefaultText}>MacOS without the ESC key</span>
             </div>
           </div>
         </Card>
         <section id='devicesList' style={theme.sectionBlock}>
-          <Heading level={2} text={locale.devices} />
+          <Heading level={2}>{locale.devices}</Heading>
           <Table header={this.header} rows={this.rows}>
             Tables for the table throne
           </Table>
           <div id='actions'>
-            <ButtonPrimary
+            <Button
+              level='primary'
+              type='accent'
               size='medium'
-              color='brand'
               text={locale.syncANewDevice}
               onClick={this.syncANewDevice}
             />
           </div>
         </section>
         <section id='syncData' style={theme.sectionBlock}>
-          <Heading level={2} text={locale.syncData} />
+          <Heading level={2}>{locale.syncData}</Heading>
           <div style={theme.syncDataSwitchGroup}>
             <Toggle id='bookmarks' checked={false} />
             <label
@@ -145,10 +146,11 @@ class SyncEnabledContent extends React.PureComponent<{}, SyncEnabledContentState
           </div>
         </section>
         <section id='clearData' style={theme.sectionBlock}>
-          <Heading level={2} text={locale.clearData} />
-          <ButtonPrimary
+          <Heading level={2}>{locale.clearData}</Heading>
+          <Button
+            level='primary'
+            type='accent'
             size='medium'
-            color='brand'
             text={locale.resetSync}
             onClick={this.resetSync}
           />

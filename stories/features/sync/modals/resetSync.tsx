@@ -6,9 +6,8 @@ import * as React from 'react'
 
 // Components
 import Heading from '../../../../src/components/text/heading'
-import ButtonPrimary from '../../../../src/components/buttonsIndicators/buttonPrimary'
+import Button from '../../../../src/components/buttonsIndicators/button'
 import Modal from '../../../../src/components/popupModals/modal'
-import ButtonSecondary from '../../../../src/components/buttonsIndicators/buttonSecondary'
 
 // Assets
 import theme from '../page/theme'
@@ -38,13 +37,8 @@ class ResetSyncModal extends React.PureComponent<ResetSyncModalProps, ResetSyncM
   render () {
     const { onClose } = this.props
     return (
-      <Modal
-        id='showIAmResetSyncModal'
-        outsideClose={true}
-        onClose={onClose}
-        theme={theme.modal}
-      >
-        <Heading level={1} theme={theme.modalTitle} text={locale.resetSync} />
+      <Modal id='showIAmResetSyncModal' onClose={onClose}>
+        <Heading level={1}>{locale.resetSync}</Heading>
         <ul style={theme.modalList}>
           <li style={theme.modalListBullet}>{locale.resetSyncFirstBullet}</li>
           <li style={theme.modalListBullet}>{locale.resetSyncSecondBullet}</li>
@@ -52,16 +46,18 @@ class ResetSyncModal extends React.PureComponent<ResetSyncModalProps, ResetSyncM
         </ul>
         <footer style={theme.modalButtonsContainerGrid}>
           <div style={theme.modalButtonsContainerGridColumn}>
-            <ButtonSecondary
-              color='brand'
+            <Button
+              level='secondary'
+              type='accent'
               size='medium'
               onClick={onClose}
               text={locale.cancel}
             />
           </div>
           <div style={theme.modalButtonsContainerGridColumn}>
-            <ButtonPrimary
-              color='brand'
+            <Button
+              level='primary'
+              type='accent'
               size='medium'
               onClick={this.areYouSureAlert}
               text={locale.resetSync}

@@ -6,7 +6,7 @@ import * as React from 'react'
 
 // Components
 import Heading from '../../../../src/components/text/heading'
-import Paragraph from '../../../../src/old/paragraph'
+// import Paragraph from '../../../../src/old/paragraph'
 import DisabledContent from '../disabledContent'
 import EnabledContent from '../enabledContent'
 
@@ -19,7 +19,7 @@ import '../../../assets/fonts/muli.css'
 import '../../../assets/fonts/poppins.css'
 
 interface SyncPageProps {
-  // Note: this is for demonstration purpose and
+  // Note: this is for demonstration purposes and
   // should not be included in production
   disabled?: boolean
 }
@@ -39,10 +39,10 @@ class SyncPage extends React.PureComponent<SyncPageProps, SyncPageState> {
   render () {
     return (
       <div style={theme.syncPage}>
-        <Heading text={locale.sync} />
-        <Paragraph theme={theme.syncInfo} text={locale.syncInfo1} />
+        <Heading level={2}>{locale.sync}</Heading>
+        <p style={theme.syncInfo}>{locale.syncInfo1}</p>
         <div style={theme.syncInfoTooltipWrapper}>
-          <Paragraph theme={theme.syncInfoGray} text={locale.syncInfo2} />
+          <p style={theme.syncInfoGray}>{locale.syncInfo2}</p>
           <a
             style={theme.syncInfoLink}
             href='https://github.com/brave/sync/wiki/Design'

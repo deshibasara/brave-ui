@@ -6,7 +6,7 @@ import * as React from 'react'
 
 // Components
 import Heading from '../../../../src/components/text/heading'
-import ButtonPrimary from '../../../../src/components/buttonsIndicators/buttonPrimary'
+import Button from '../../../../src/components/buttonsIndicators/button'
 import Input from '../../../../src/components/formControls/input'
 import Modal from '../../../../src/components/popupModals/modal'
 
@@ -24,27 +24,20 @@ class NewToSyncModal extends React.PureComponent<NewToSyncModalProps, {}> {
   }
 
   setupSync = () => {
-    console.log('fale: setting up sync')
+    console.log('fake: setting up sync')
   }
 
   render () {
     const { onClose } = this.props
     return (
-      <Modal
-        id='showIAmNewToSyncModal'
-        outsideClose={true}
-        onClose={onClose}
-        theme={theme.modalSmall}
-      >
-        <Heading level={1} theme={theme.modalTitle} text={locale.iAmNewToSync} />
-        <Input
-          theme={theme.input}
-          title={locale.enterAnOptionalName}
-          placeholder={this.fakeDeviceName}
-        />
+      <Modal id='showIAmNewToSyncModal' onClose={onClose}>
+        <Heading level={1}>{locale.iAmNewToSync}</Heading>
+        <label>{locale.enterAnOptionalName}</label>
+        <Input placeholder={this.fakeDeviceName} />
         <footer style={theme.modalButtonsContainer}>
-          <ButtonPrimary
-            color='brand'
+          <Button
+            level='primary'
+            type='accent'
             size='medium'
             onClick={this.setupSync}
             text={locale.setUpSync}

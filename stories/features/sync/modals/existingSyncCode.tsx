@@ -6,7 +6,7 @@ import * as React from 'react'
 
 // Components
 import Heading from '../../../../src/components/text/heading'
-import ButtonPrimary from '../../../../src/components/buttonsIndicators/buttonPrimary'
+import Button from '../../../../src/components/buttonsIndicators/button'
 import Input from '../../../../src/components/formControls/input'
 import Modal from '../../../../src/components/popupModals/modal'
 import TextArea from '../../../../src/components/formControls/textarea'
@@ -31,22 +31,16 @@ class ExistingSyncCodeModal extends React.PureComponent<ExistingSyncCodeModalPro
   render () {
     const { onClose } = this.props
     return (
-      <Modal
-        id='showIAmExistingSyncCodeModal'
-        outsideClose={true}
-        onClose={onClose}
-        theme={theme.modal}
-      >
-        <Heading level={1} theme={theme.modalTitle} text={locale.iHaveAnExistingSyncCode} />
-        <TextArea theme={theme.input} title={locale.enterYourSyncCodeWords} />
-        <Input
-          theme={theme.input}
-          title={locale.enterAnOptionalNameForThisDevice}
-          placeholder={this.fakeDeviceName}
-        />
+      <Modal id='showIAmExistingSyncCodeModal' onClose={onClose}>
+        <Heading level={1}>{locale.iHaveAnExistingSyncCode}</Heading>
+        <label>{locale.enterYourSyncCodeWords}</label>
+        <TextArea />
+        <label>{locale.enterAnOptionalNameForThisDevice}</label>
+        <Input placeholder={this.fakeDeviceName} />
         <footer style={theme.modalButtonsContainer}>
-          <ButtonPrimary
-            color='brand'
+          <Button
+            level='primary'
+            type='accent'
             size='medium'
             onClick={this.setUpSync}
             text={locale.setUpSync}

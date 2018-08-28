@@ -5,8 +5,7 @@
 import * as React from 'react'
 
 // Components
-import ButtonPrimary from '../../../src/components/buttonsIndicators/buttonPrimary'
-import ButtonSecondary from '../../../src/components/buttonsIndicators/buttonSecondary'
+import Button from '../../../src/components/buttonsIndicators/button'
 
 // Modals
 import NewToSyncModal from './modals/newToSync'
@@ -52,16 +51,18 @@ class SyncDisabledContent extends React.PureComponent<{}, SyncDisabledContentSta
             : null
         }
         <div>
-          <ButtonPrimary
-            color='brand'
+          <Button
+            level='primary'
+            type='accent'
             size='medium'
             onClick={this.newToSyncModal}
             text={locale.iAmNewToSync}
           />
         </div>
         <div>
-          <ButtonSecondary
-            color='brand'
+          <Button
+            level='secondary'
+            type='accent'
             size='medium'
             onClick={this.existingSyncCodeModal}
             text={locale.iHaveAnExistingSyncCode}

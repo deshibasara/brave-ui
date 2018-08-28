@@ -6,7 +6,7 @@ import * as React from 'react'
 
 // Components
 import Heading from '../../../../src/components/text/heading'
-import ButtonSecondary from '../../../../src/components/buttonsIndicators/buttonSecondary'
+import Button from '../../../../src/components/buttonsIndicators/button'
 import Modal from '../../../../src/components/popupModals/modal'
 import TextArea from '../../../../src/components/formControls/textarea'
 
@@ -57,20 +57,16 @@ class SyncANewDeviceModal extends React.PureComponent<SyncANewDeviceModalProps, 
   render () {
     const { onClose } = this.props
     return (
-      <Modal
-        id='showIAmSyncANewDeviceModal'
-        outsideClose={true}
-        onClose={onClose}
-        theme={theme.modal}
-      >
-        <Heading level={1} theme={theme.modalTitle} text={locale.syncANewDevice} />
+      <Modal id='showIAmSyncANewDeviceModal' onClose={onClose}>
+        <Heading level={1}>{locale.syncANewDevice}</Heading>
         <ol style={theme.modalList}>
           <li style={theme.modalListBullet}>{locale.syncANewDeviceFirstBulletText}</li>
           <li style={theme.modalListBullet}>
             <span>{locale.syncANewDeviceSecondBulletText}</span>
             <div style={theme.modalListButtonWrapper}>
-              <ButtonSecondary
-                color='brand'
+              <Button
+                level='secondary'
+                type='accent'
                 size='small'
                 onClick={this.showQRCode}
                 text={locale.showSecretQRCode}
@@ -85,8 +81,9 @@ class SyncANewDeviceModal extends React.PureComponent<SyncANewDeviceModalProps, 
           <li style={theme.modalListBullet}>
             <span>{locale.syncANewDeviceThirdBulletText}</span>
             <div style={theme.modalListButtonWrapper}>
-              <ButtonSecondary
-                color='brand'
+              <Button
+                level='secondary'
+                type='accent'
                 size='small'
                 onClick={this.showCodeWords}
                 text={locale.showSecretCodeWords}
@@ -95,10 +92,7 @@ class SyncANewDeviceModal extends React.PureComponent<SyncANewDeviceModalProps, 
                 {
                   this.state.showCodeWordsModal
                     ? <div>
-                        <TextArea
-                          theme={theme.passphraseTextarea}
-                          defaultValue={this.fakePassphrase}
-                        />
+                        <TextArea placeholder={this.fakePassphrase} />
                       </div>
                     : null
                 }
@@ -107,8 +101,9 @@ class SyncANewDeviceModal extends React.PureComponent<SyncANewDeviceModalProps, 
           </li>
         </ol>
         <footer style={theme.modalButtonsContainer}>
-          <ButtonSecondary
-            color='brand'
+          <Button
+            level='secondary'
+            type='accent'
             size='medium'
             onClick={onClose}
             text={locale.done}
